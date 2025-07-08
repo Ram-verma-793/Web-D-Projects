@@ -1,0 +1,385 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    color: #171a20;
+    width: 100%;
+    box-sizing: border-box;
+    scroll-behavior: auto;
+}
+
+
+/* .......................................Header  start...........................*/
+header{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 5px 15px;
+    margin-top: 30px;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    
+}
+li {
+    font-size: 25px;
+    width: 8em;
+    height: 2em;
+    text-align: center;
+    line-height: 2em;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    position: relative;
+    transition: 0.5s;
+    margin: 0.8em;
+}
+li::before,
+li::after {
+    /* display: none; */
+    content: '';
+    position: absolute;
+    width: 0.6em;
+    height: 0.6em;
+    /* background-color: gainsboro; */
+    background: transparent;
+    border-radius: 50%;
+    transition: 0.5s cubic-bezier(0.5, -0.5, 0.25, 1.5);
+    top: calc(50% - 0.6em / 2);
+}
+
+li::before {left: 0; z-index: -1;}
+li::after {right: 0; z-index: -2;}
+
+li a:hover {
+    color: white;
+}
+li:hover::before,
+li:hover::after {
+    /* display: block; */
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    background-color: dodgerblue;
+}
+li:hover::before {
+    top: 0;
+}
+li:hover::after {
+    right: -0.4em;
+    filter: brightness(0.8);
+}
+a.logo img{
+  
+    width: 200px;
+    
+}
+
+header a{
+    color: inherit;
+   
+}
+header nav{
+    width: 70%;
+    list-style-type: none;
+    display:flex;
+}
+nav a{
+    text-decoration: none;
+    padding: 5px 10px;
+}
+#center{
+    text-align: center;
+    /* border: 1px solid red; */
+    font-weight: 900;
+    color: #fff;
+    padding-left: 100px;
+  
+}
+#center a{
+    font-weight: 900;
+    font-size: 1.1rem;
+   
+}
+
+
+
+main{
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+.slides{
+    height: 100vh;
+    width: 100%;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    color: #fff;
+    background: linear-gradient(454deg, #4f4080, #9553ff);
+    scroll-snap-align: start;
+
+}
+
+
+
+
+
+.bg-video1{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    
+}
+.slides h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    padding-top: 200px;
+}
+.slides p{
+    font-size: 18px;
+}
+
+.slides .para-1{
+   text-align: center;
+   color: #fff;
+}
+.slides .para-2{
+    text-align: center;
+    position: relative;
+    top: 310px;
+ }
+ .slides .para-2 span a{
+    text-decoration: none;
+    color: #fff;
+    text-decoration: underline ;
+ }
+
+.slide1{
+    height: 100vh; 
+    width: 100%;
+    background: url(images/Mercedes-AMG.mp4);
+    background-size: cover;
+  
+    
+}
+
+.slide2{
+    height: 100vh; 
+    width: 100%;
+    background-image: url(images/model-s.jpg);
+    background-size: cover;
+}
+.slide3{
+    height: 100vh; 
+    width: 100%;
+    background-image: url(images/model-x.jpg);
+    background-size: cover;
+}
+.slide4{
+    height: 100vh; 
+    width: 100%;
+    background-image: url(images/model-y.jpg);
+    background-size: cover;
+}
+.slide5{
+    height: 100vh; 
+    width: 100%;
+   background-image: url(images/solarpanels.jpg);
+    background-size: cover;
+}
+.slide6{
+    height: 100vh; 
+    width: 100%;
+     background-image: url(images/roof.jpg);
+    background-size: cover;
+}
+
+/* a{
+  text-decoration: none;
+  color: inherit;
+  } */
+
+
+
+
+
+
+/*buttons*/
+.slides .button{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    position: relative;
+    top: 320px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+
+
+
+
+.btn1 {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #adadad;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+.btn1 a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn1:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.btn1:active {
+    color: rgb(0, 0, 0)fff
+}
+
+.btn1:active:after {
+    background: transparent;
+}
+
+.btn1:hover:before {
+    opacity: 1;
+}
+
+.btn1:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+
+.button{
+  position: relative;
+  padding: 1em 1.5em;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  font-size: 18px;
+  margin: 1em 0.8em;
+}
+  
+  
+  .demo{
+    color: red;
+  }
+   
+    
+  
+    .demo::after .demo::before{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      border: 2px solid;
+      transition: all 0.6s ease;
+      border-radius: 2px;
+    }
+      
+
+    .demo::after{
+        bottom: 0;
+        right: 0;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-bottom-color: blue;
+        border-right-color: blue;
+    }
+
+    .demo::before{
+        top: 0;
+      left: 0;
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+      border-top-color: blue;
+      border-left-color: blue;
+    }
+
+    .demo:hover:after .demo:hover:before{
+      border-bottom-color: blue;
+      border-right-color: blue;
+      border-top-color: blue;
+      border-left-color: blue;
+      width: 100%;
+      height: 100%;
+    }
+      
+
+
+
+    /* Responsive styles */
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 5px;
+    }
+
+    main {
+        margin-top: 20px;
+    }
+
+    .slides {
+        padding: 20px;
+    }
+
+    .btn1 {
+        width: 100%;
+    }
+}
